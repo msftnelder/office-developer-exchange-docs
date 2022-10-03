@@ -281,6 +281,9 @@ The following table lists the HTTP status codes that are returned by throttling 
 |HTTP 500 |Indicates an internal server error with the ErrorServerBusy error code. This indicates that the client should delay sending additional requests until a later time. The response may contain a back off hint called BackOffMilliseconds. If present, the value of BackOffMilliseconds should be used as the duration until the client resubmits a request. |
 |HTTP 200 |Contains an EWS schema-based error response with an ErrorInternalServerError error code. An inner ErrorServerBusy error code may be present. This indicates that the client should delay sending additional requests until a later time. |
 
+## Additional throttling policies for applications 
+Applications which call without a user context are additionally limited to 10,000 distinct mailboxes accessed per 10 minutes. 
+
 ## See also
 
 - [Exchange Workload Management](https://technet.microsoft.com/library/jj150503.aspx)
